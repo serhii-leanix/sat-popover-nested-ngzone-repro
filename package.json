@@ -1,0 +1,29 @@
+{
+  "name": "sat-popover-nested-ngzone-repro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@angular/common": "21.2.25",
+    "@angular/compiler": "21.2.25",
+    "@angular/core": "21.2.25",
+    "@angular/platform-browser": "21.2.25",
+    "@angular/cdk": "21.2.14",
+    "@ncstate/sat-popover": "16.0.0",
+    "rxjs": "7.8.2",
+    "tslib": "2.6.0",
+    "zone.js": "0.16.3",
+    "@angular/animations": "21.2.25"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vite": "6.4.3"
+  },
+  "stackblitz": {
+    "startCommand": "npm start"
+  }
+}

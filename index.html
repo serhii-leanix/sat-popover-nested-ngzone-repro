@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Which button wakes the parent Angular zone?</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Angular 21.2.25 · sat-popover 16.0.0</p>
+      <h1>Which button wakes the parent zone?</h1>
+      <p>Try both buttons. In scenarios 1–2, both leave the parent alone. In scenarios 3–4, runOutsideAngular returns to the parent’s Angular zone.</p>
+      <p id="status" role="status">Preparing scenarios…</p>
+      <div id="scenarios"></div>
+      <details>
+        <summary>What exactly does the counter measure?</summary>
+        <p>Each button schedules one requestAnimationFrame. The counter observes the application NgZone’s onMicrotaskEmpty event. A nested runOutsideAngular can activate the parent while registering the frame and again when its callback runs.</p>
+        <p>Buttons and result updates run outside Angular so the demo controls do not cause the events being measured. These are zone events, not ApplicationRef tick counts or timings. No popover is rendered and no private Angular fields are read.</p>
+      </details>
+    </main>
+    <template id="scenario-template">
+      <section class="scenario">
+        <h2></h2>
+        <p data-description></p>
+        <code data-tree></code>
+        <div class="counter"><strong data-count>0</strong><span>parent-zone events</span></div>
+        <div class="actions">
+          <button data-outside>runOutsideAngular()</button>
+          <button data-root>Zone.root.run()</button>
+          <button data-reset class="reset">Reset</button>
+        </div>
+        <p data-result role="status">Choose a button. Each schedules one animation frame.</p>
+      </section>
+    </template>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

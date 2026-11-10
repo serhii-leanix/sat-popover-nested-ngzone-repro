@@ -1,0 +1,25 @@
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #17212b; background: #f5f7fa; }
+main { max-width: 1120px; margin: 32px auto; padding: 24px; }
+h1 { font-size: 36px; line-height: 1.15; margin: 8px 0 16px; }
+h2 { font-size: 20px; margin: 0 0 8px; }
+.eyebrow { color: #526178; font-size: 14px; }
+#status { margin: 24px 0; font-weight: 600; }
+#scenarios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.scenario { padding: 24px; border: 1px solid #dae1e9; border-radius: 12px; background: white; }
+.scenario > p { min-height: 48px; }
+code { display: block; font-size: 12px; padding: 10px; background: #edf2f8; border-radius: 6px; overflow-wrap: anywhere; }
+.counter { display: flex; align-items: baseline; gap: 12px; margin: 20px 0; }
+.counter strong { font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.counter span { color: #526178; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button { padding: 10px 12px; border: 1px solid #275db3; border-radius: 6px; background: #fff; color: #17437f; font: 600 13px system-ui; cursor: pointer; }
+button:hover { background: #edf3ff; }
+button:focus-visible { outline: 3px solid #749cec; outline-offset: 2px; }
+button:disabled { opacity: .5; cursor: wait; }
+button.reset { border-color: #c7cfd9; color: #526178; }
+[data-result] { font-size: 14px; margin-bottom: 0; }
+[data-activated="true"] { color: #9a3c00; }
+[data-activated="false"] { color: #21603d; }
+details { margin-top: 28px; }
+summary { cursor: pointer; font-weight: 600; }
+@media (max-width: 760px) { #scenarios { grid-template-columns: 1fr; } main { margin-top: 8px; padding: 16px; } h1 { font-size: 28px; } }
